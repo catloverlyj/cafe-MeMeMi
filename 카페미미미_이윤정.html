@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe mememi_yj</title>
+    <link rel="shortcut icon" href="images/common/favicon.ico.ico">
+      <!-- bxSlider CSS file -->
+<link href="css/jquery.bxslider.css" rel="stylesheet" />
+<!-- jQuery library -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<!-- bxSlider Javascript file -->
+<script src="js/jquery.bxslider.js"></script>
+<script>
+$(document).ready(function(){
+		$('.bxslider').bxSlider({
+			mode: 'horizontal', //슬라이드 위,아래
+			moveSlides: 1, //슬라이드 이동시 개수
+			slideMargin: 10, //슬라이드 사이 여백
+			infiniteLoop: true, //반복
+			slideWidth: 600, //슬라이드 너비
+            sliderHeight:250,
+			minSlides: 1, //슬라이드 최소 노출 개수
+			maxSlides: 1, //슬라이드 최대 노출 개수
+			speed: 100, //슬라이드 전환 속도
+            controls:true, //이전,다음 버튼 노출
+            auto:true, //자동넘김여부
+            pager:true, //아래 이미지개수(동그라미) 표시 여부
+            autoHover:false, //호버 시 애니메이션 정지여부
+		});
+	});  //end
+</script>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul,li{list-style: none;}
+        a{text-decoration: none; color:inherit;}
+        header img{
+            width: 100%;
+            height: 40vmax;
+            background-position: top left;
+            background-size: contain;
+            background-clip: fixed;
+        }
+
+        nav{width: 100%; 
+            height: 100px;
+            background-color: white;
+            position: relative;
+            font-weight: bold;
+            margin-top: -10px;
+            border: 1px solid red;
+        }
+        nav>ul{display: flex; flex-flow: row nowrap;}
+        .nav{
+            width: 650px;
+            height: 100px;
+            margin: 0 auto;
+            text-align: center;
+            z-index: 10;
+            /* border: 1px solid blue; */
+            }
+        .nav>li{width: 17%;}
+        .nav>li>a{
+            font-size: 13px;
+            margin: 10% 0;
+            line-height: 100px;
+            /* border: 1px solid red; */
+        }
+        .nav>li>a:hover{color:hotpink;}
+        .nav>li>a:hover .nav::before{height: 350px;}
+        .nav::before{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 0;
+            position: absolute;
+            top: 0; left: 0;
+            margin-top: 100px;
+            background: rgb(254, 246, 230);
+        }
+        .smenu{
+            width: 100%;
+            height: 0;
+            font-size: 12px;
+            text-align: left;
+            position: relative;
+            margin-top: 20px;
+            /* border: 1px solid orange; */
+        }
+        .smenu>li{opacity: 0; transition: all .5s;}
+        .smenu>li>a{display: block; opacity: 1;}
+        .nav>li:hover>.smenu li{opacity: 1;}
+        .nav>li>a:hover .smenu>div {opacity: 1;}
+        /* .smenu>div{opacity: 0;} */
+
+        .smenu_img{width: 200px; height: 300px; 
+            /* border: 1px solid red; */
+        }
+        .s_title{text-align: center; text-decoration: underline; margin:10px 0;}
+        .s_content{font-weight: lighter; text-align: center;}
+        .s_sub{text-align: center;}
+
+        #s_img1{width: 200px; height: 200px; background: url(images/common/gnbPhoto01.png); 
+            margin-bottom: 10px;
+        }
+        #s_img2{width: 200px; height: 200px; background: url(images/common/gnbPhoto02.png); 
+            margin-bottom: 10px;
+        }
+        .smenu_img:nth-of-type(1){position: absolute; top: 10%; left: 200%;}
+        .smenu_img:nth-of-type(2){position: absolute; top: 10%; left: 420%;}
+
+           
+            
+        .menu{
+            width: 20%;
+            position: absolute;
+            right: 0;
+            top: 43%;
+            /* border: 1px solid red; */
+        }
+        .menu li{margin-right: 5%; font-size: 10px;}
+        .menu li:last-of-type{width: 15px; height: 15px;
+            /* border: 1px solid red; */
+            background: url("images/common/menuTool03.png")center center/cover;}
+
+        .bxslider{width: 50%; height: 500px;
+            z-index: 1;
+            float: left;}
+        .bxslider_side{width: 50%; height: 500px;
+        background: url("images/index_img/newImg04.png") center center/cover;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <img src="images/common/hd_visual.png">
+    </header>
+    <nav>
+        <ul class="nav">
+            <li><a href="#">MeMeMi</a>
+            <ol class="smenu">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Location</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <div class="smenu_img">
+                <p class="s_title">About MeMeMi</p>
+                <div id="s_img1"></div>
+                <p class="s_content">콜렉트 카페 미미미를 소개합니다.</p>
+                <p class="s_sub">Read More+</p>
+                </div>
+                <div class="smenu_img">
+                    <p class="s_title">In MILANO</p>
+                    <div id="s_img2"></div>
+                    <p class="s_sub">VIA BRERA 23</p>
+                    <p class="s_content">이탈리아 밀라노점</p>
+                </div>
+            </ol>
+            </li>
+            <li><a href="#">Kitchen</a>
+            <ol class="smenu">
+                <li><a href="#">Salad</a></li>
+                <li><a href="#">Brunch Plate</a></li>
+                <li><a href="#">Pasta</a></li>
+                <li><a href="#">Rice</a></li>
+                <li><a href="#">Steak</a></li>
+                <li><a href="#">Pizza</a></li>
+                <li><a href="#">Side</a></li>
+                <li><a href="#">Bread&cookie</a></li>
+                <li><a href="#">Cake</a></li>
+                <li><a href="#">+ Season menu</a></li>
+            </ol>
+            </li>
+            <li><a href="#">Caffe</a>
+            <ol class="smenu">
+                <li><a href="#">+ Season menu</a></li>
+                <li><a href="#">Espresso</a></li>
+                <li><a href="#">Coffee</a></li>
+                <li><a href="#">Tea</a></li>
+                <li><a href="#">Tea Latte</a></li>
+                <li><a href="#">Others</a></li>
+                <li><a href="#">Ade</a></li>
+                <li><a href="#">Fresh juice</a></li>
+                <li><a href="#">Smoothie</a></li>
+                <li><a href="#">Granita</a></li>
+                <li><a href="#">Ice cream</a></li>
+                <li><a href="#">Dessert</a></li>
+                <li><a href="#">Food</a></li>
+            </ol>
+            </li>
+            <li><a href="#">Lifestyle</a>
+            <ol class="smenu">
+                <li><a href="#">Polspotten</a></li>
+                <li><a href="#">Qeeboo</a></li>
+            </ol>
+            </li>
+            <li><a href="#">Trend</a>
+             <ol class="smenu">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Location</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ol>
+            </li>
+            <li><a href="#">Collective Shop</a>
+            <ol class="smenu">
+                <li><a href="#">All</a></li>
+                <li><a href="#">Table</a></li>
+                <li><a href="#">Chair</a></li>
+                <li><a href="#">Stool</a></li>
+                <li><a href="#">Object</a></li>
+                <li><a href="#">Lighting</a></li>
+                <li><a href="#">Tumbler</a></li>
+                <li><a href="#">Kitchen</a></li>
+            </ol>
+            </li>
+        </ul>
+        <ul class="menu">
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Join</a></li>
+            <li><a href="#">My Page</a></li>
+            <li><a href="#">Delivery</a></li>
+            <li></li>
+        </ul>
+    </nav>
+    <div class="bxslider">
+        <div><img src="images/index_img/newImg01.png"></div>
+        <div><img src="images/index_img/newImg02.png"></div>
+        <div><img src="images/index_img/newImg03.png"></div>
+    </div>
+    <div class="bxslider_side"></div>
+</body>
+</html>
