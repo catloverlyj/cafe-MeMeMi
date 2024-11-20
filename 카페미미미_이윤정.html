@@ -18,7 +18,7 @@ $(document).ready(function(){
 			moveSlides: 1, //슬라이드 이동시 개수
 			slideMargin: 10, //슬라이드 사이 여백
 			infiniteLoop: true, //반복
-			slideWidth: 600, //슬라이드 너비
+			slideWidth: 1000, //슬라이드 너비
             sliderHeight:250,
 			minSlides: 1, //슬라이드 최소 노출 개수
 			maxSlides: 1, //슬라이드 최대 노출 개수
@@ -36,19 +36,19 @@ $(document).ready(function(){
         a{text-decoration: none; color:inherit;}
         header img{
             width: 100%;
-            height: 40vmax;
+            height: 600px;
             background-position: top left;
-            background-size: contain;
-            background-clip: fixed;
+            position: fixed;
         }
 
         nav{width: 100%; 
             height: 100px;
             background-color: white;
             position: relative;
+            top: 600px;
             font-weight: bold;
-            margin-top: -10px;
-            border: 1px solid red;
+            /* border: 1px solid red; */
+            z-index: 100;
         }
         nav>ul{display: flex; flex-flow: row nowrap;}
         .nav{
@@ -67,38 +67,58 @@ $(document).ready(function(){
             /* border: 1px solid red; */
         }
         .nav>li>a:hover{color:hotpink;}
-        .nav>li>a:hover .nav::before{height: 350px;}
+        .nav>li:nth-child(2) .smenu{position: relative; left: -110px;}
+        .nav>li:nth-child(3) .smenu{position: relative; left: -220px;}
+        .nav>li:nth-child(4) .smenu{position: relative; left: -330px;}
+        .nav>li:nth-child(5) .smenu{position: relative; left: -440px;}
+        .nav>li:nth-child(6) .smenu{position: relative; left: -550px;}
         .nav::before{
             content: "";
             display: block;
             width: 100%;
-            height: 0;
+            height: 0px;
             position: absolute;
             top: 0; left: 0;
             margin-top: 100px;
-            background: rgb(254, 246, 230);
+            background: #fff;
+            opacity: .9;
+            transition: all .3s;
         }
+        .nav:hover::before{height: 435px;}
         .smenu{
-            width: 100%;
-            height: 0;
+            width: 700px;
+            height: 400px;
             font-size: 12px;
             text-align: left;
             position: relative;
             margin-top: 20px;
+            line-height: 50px;
+            /* overflow:hidden; */
             /* border: 1px solid orange; */
         }
-        .smenu>li{opacity: 0; transition: all .5s;}
+        /* .smenu:nth-of-type(3){border: 1px solid red; transform: translateX(-100px);} */
+        .smenu>li{
+            opacity: 0; 
+            display: block;
+            width: 150px;
+            /* border: 1px solid red; */
+            transitiotn: all .3s;}
+
         .smenu>li>a{display: block; opacity: 1;}
         .nav>li:hover>.smenu li{opacity: 1;}
-        .nav>li>a:hover .smenu>div {opacity: 1;}
-        /* .smenu>div{opacity: 0;} */
+        
+        .smenu>div{
+            opacity: 0;  
+            transitiotn: all .3s;
+        }
+        .nav>li:hover .smenu>div {opacity: 1;}
 
         .smenu_img{width: 200px; height: 300px; 
             /* border: 1px solid red; */
         }
-        .s_title{text-align: center; text-decoration: underline; margin:10px 0;}
+        .s_title{text-align: center; text-decoration: underline; margin:10px 0; font-size: 15px;}
         .s_content{font-weight: lighter; text-align: center;}
-        .s_sub{text-align: center;}
+        .s_sub{text-align: center; font-size: 14px;}
 
         #s_img1{width: 200px; height: 200px; background: url(images/common/gnbPhoto01.png); 
             margin-bottom: 10px;
@@ -106,10 +126,40 @@ $(document).ready(function(){
         #s_img2{width: 200px; height: 200px; background: url(images/common/gnbPhoto02.png); 
             margin-bottom: 10px;
         }
-        .smenu_img:nth-of-type(1){position: absolute; top: 10%; left: 200%;}
-        .smenu_img:nth-of-type(2){position: absolute; top: 10%; left: 420%;}
+        #s_img3{width: 200px; height: 200px; background: url(images/common/13_2.png)center center/cover; 
+            margin-bottom: 10px;
+        }
+        #s_img4{width: 200px; height: 200px; background: url(images/common/20_0.png)center center/cover; 
+            margin-bottom: 10px;
+        }
+        #s_img5{width: 380px; height: 200px; background: url(images/common/gnbPhoto05.png)center center/cover; 
+            margin-bottom: 10px;
+        }
+        #s_img6{width: 200px; height: 200px; background: url(images/common/16_8.png)center center/cover; 
+            margin-bottom: 10px;
+        }
+        #s_img7{width: 200px; height: 200px; background: url(images/common/26_1.png)center center/cover; 
+            margin-bottom: 10px;
+        }
+        #s_img8{width: 200px; height: 200px; background: url(images/common/gnbPhoto08.png)center center/cover; 
+            margin-bottom: 10px;
+        }
+        #s_img9{width: 200px; height: 200px; background: url(images/common/gnbPhoto09.png)center center/cover; 
+            margin-bottom: 10px;
+        }
+        #s_img10{width: 200px; height: 200px; background: url(images/common/gnbPhoto10.jpg)center center/cover; 
+            margin-bottom: 10px;
+        }
+        .smenu_img:nth-of-type(1){position: absolute; top: 0; right: 250px;}
+        .smenu_img:nth-of-type(2){position: absolute; top: 0; right: 30px;}
+        .smenu_img3, .smenu_img4, .smenu_img8{position: absolute !important; top: 0 !important; right: 30px !important;}
+        .smenu_img5{width: 380px !important; text-align: center; transform: translateX(150px);}
+        .smenu_img6{position: absolute !important; top: 0 !important; right: 470px !important;}
+        .smenu_img7{position: absolute !important; top: 0 !important; right: 250px !important;}
 
-           
+        .smenu:nth-child(2) li:last-of-type(3){ border: 1px solid blue;
+            position: absolute !important; top: 0 !important; left: 100px !important;}
+        .smenu:nth-child(4)>li{transform: translateY(-100px);}
             
         .menu{
             width: 20%;
@@ -123,12 +173,246 @@ $(document).ready(function(){
             /* border: 1px solid red; */
             background: url("images/common/menuTool03.png")center center/cover;}
 
-        .bxslider{width: 50%; height: 500px;
+        #bxslider1{width: 50% !important; height: 600px !important; border: 1px solid red; 
+            box-sizing: border-box;
+            float: left;
+            position: relative; top: 600px;
+        }
+        .bxslider{width: 100%; height: 500px !important;
+            position: relative;
             z-index: 1;
             float: left;}
-        .bxslider_side{width: 50%; height: 500px;
-        background: url("images/index_img/newImg04.png") center center/cover;
+        .bxslider_side{
+            width: 50%; height: 600px;
+            position: absolute; top: 690px; right: 0;
+            /* border: 1px solid blue; */
+            background: url("images/index_img/newImg04.png")center center/cover;
         }
+        .bm_line{
+            width: 100%; height: 800px; background: rgb(247, 236, 238); 
+            position: relative; left: 0; top: 0;
+            clear: both;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 100px;
+            position: relative;
+            top: 510px;
+        }
+        .title{font-weight: bold; font-size: 20px; margin-bottom: 50px;}
+        .sub_title{font-weight: bold;  font-size: 13px; color:gray; margin-bottom: 50px;}
+
+        .bm{width: 250px; height: 450px; 
+            /* border: 1px solid red; */
+            display: inline-block;
+        }
+        .bm:nth-child(5){transform: translateY(-18.5px);}
+        #bm_img1{width: 250px; height: 250px; margin: 0 auto;
+        background: url(images/index_img/bestimg01.png)no-repeat center center;
+        background-size: 90%; transition: all .8s;
+        margin-bottom: 30px;
+        }
+        #bm_img2{width: 250px; height: 250px; margin: 0 auto;
+        background: url(images/index_img/bestimg02.png)no-repeat center center;
+        background-size: 90%; transition: all .8s;
+        margin-bottom: 30px;
+        }
+        #bm_img3{width: 250px; height: 250px; margin: 0 auto;
+        background: url(images/index_img/bestimg03.png)no-repeat center center;
+        background-size: 90%; transition: all .8s;
+        margin-bottom: 30px;
+        }
+        #bm_img4{width: 250px; height: 250px; margin: 0 auto;
+        background: url(images/index_img/bestimg04.png)no-repeat center center;
+        background-size: 90%; transition: all .8s;
+        margin-bottom: 30px;
+        }
+        #bm_img1:hover{background-size: 100%;}
+        #bm_img2:hover{background-size: 100%;}
+        #bm_img3:hover{background-size: 100%;}
+        #bm_img4:hover{background-size: 100%;}
+
+        .bm_title{font-weight: bold; margin-bottom: 7px;}
+        .bm_content{font-size: 13px; color:gray;}
+
+        #right_side{width: 200px; height: 300px; border: 1px solid red;
+        position: fixed;
+        }
+        .cls_line{
+            width: 100%; height: 1300px; background-color: #f1f1f1; 
+            position: relative; top: 500px;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 100px;
+        }
+        #line{font-weight: bold; transform: translateY(-30px);}
+        .cls_box{
+            width: 950px; height: 650px; margin: 0 auto;
+            position: relative;
+            /* border: 1px solid red; */
+            color:#fff;}
+        .cls_box p:nth-child(2){text-decoration: underline;}
+        .cls_box p{z-index: 5; line-height: 30px; font-size: 12px;}
+        .cls_img1{
+            width: 300px; height: 400px;
+            background: url(images/index_img/collective01.jpg)no-repeat center center/cover;
+            position: absolute; top: 0; left: 0; transition: all 1s;
+        }
+        .cls_img1:before{
+            content: "";
+            display: block;
+            width: 300px; height: 400px; 
+            position: absolute;
+            top: 0; left: 0;
+            background-color: #111;
+            opacity: 0;
+            z-index: 2;
+            transition: all 1s;
+            box-sizing: border-box;
+            padding-top: 40%;
+        }
+        .cls_img1>p{position: relative; z-index: 5; opacity: 0;}
+        .cls_img1>p:first-child{padding-top: 50%;}
+        .cls_img1:hover::before{opacity: .7;}
+        .cls_img1:hover p{opacity: 1;}
+        .cls_img2{
+            width: 300px; height: 225px;
+            background: #f1f1f1;
+            position: absolute; left: 0; bottom: 0; transition: all 1s;
+        }
+        .cls_img2:before{
+            content: "";
+            display: block;
+            width: 300px; height: 225px; 
+            position: absolute;
+            top: 0; left: 0;
+            background-color: #111;
+            opacity: 0;
+            z-index: 2;
+            transition: all 1s;
+            box-sizing: border-box;
+            padding-top: 40%;
+        }
+        .cls_img2>p{position: relative; z-index: 5; opacity: 0;}
+        .cls_img2>p:first-child{padding-top: 25%;}
+        .cls_img2:hover::before{opacity: .7;}
+        .cls_img2:hover p{opacity: 1;}
+        .cls_img3{
+            width: 300px; height: 225px;
+            background: url(images/index_img/collective04.jpg)no-repeat center center/cover;
+            position: absolute; top: 0; left: 325px; transition: all 1s;
+        }
+        .cls_img3:before{
+            content: "";
+            display: block;
+            width: 300px; height: 225px; 
+            position: absolute;
+            top: 0; left: 0;
+            background-color: #111;
+            opacity: 0;
+            z-index: 2;
+            transition: all 1s;
+            box-sizing: border-box;
+            padding-top: 40%;
+        }
+        .cls_img3>p{position: relative; z-index: 5; opacity: 0;}
+        .cls_img3>p:first-child{padding-top: 25%;}
+        .cls_img3:hover::before{opacity: .7;}
+        .cls_img3:hover p{opacity: 1;}
+        .cls_img4{
+            width: 300px; height: 400px;
+            background: url(images/index_img/collective02.jpg)no-repeat center center/cover;
+            position: absolute; bottom: 0; left: 325px; transition: all 1s;
+        }
+        .cls_img4:before{
+            content: "";
+            display: block;
+            width: 300px; height: 400px; 
+            position: absolute;
+            top: 0; left: 0;
+            background-color: #111;
+            opacity: 0;
+            z-index: 2;
+            transition: all 1s;
+            box-sizing: border-box;
+            padding-top: 40%;
+        }
+        .cls_img4>p{position: relative; z-index: 5; opacity: 0;}
+        .cls_img4>p:first-child{padding-top: 50%;}
+        .cls_img4:hover::before{opacity: .7;}
+        .cls_img4:hover p{opacity: 1;}
+        .cls_img5{
+            width: 300px; height: 400px;
+            background: url(images/index_img/collective03.jpg)no-repeat center center/cover;
+            position: absolute; top: 0; right:0; transition: all 1s;
+        }
+        .cls_img5:before{
+            content: "";
+            display: block;
+            width: 300px; height: 400px; 
+            position: absolute;
+            top: 0; left: 0;
+            background-color: #111;
+            opacity: 0;
+            z-index: 2;
+            transition: all 1s;
+            box-sizing: border-box;
+            padding-top: 40%;
+        }
+        .cls_img5>p{position: relative; z-index: 5; opacity: 0;}
+        .cls_img5>p:first-child{padding-top: 50%;}
+        .cls_img5:hover::before{opacity: .7;}
+        .cls_img5:hover p{opacity: 1;}
+        .cls_img6{
+            width: 300px; height: 225px;
+            background: #f1f1f1;
+            position: absolute; right: 0; bottom: 0; transition: all 1s;
+        }
+        .cls_img6:before{
+            content: "";
+            display: block;
+            width: 300px; height: 225px; 
+            position: absolute;
+            top: 0; left: 0;
+            background-color: #111;
+            opacity: 0;
+            z-index: 2;
+            transition: all 1s;
+            box-sizing: border-box;
+            padding-top: 40%;
+        }
+        .cls_img6>p{position: relative; z-index: 5; opacity: 0;}
+        .cls_img6>p:first-child{padding-top: 25%;}
+        .cls_img6:hover::before{opacity: .7;}
+        .cls_img6:hover p{opacity: 1;}
+        .object{
+            width: 95%; height: 200px; 
+            margin: 0 auto;
+            margin-top: 80px; 
+            position: relative;
+        }
+        .object li{width: 200px; height: 200px;}
+        .ob1{background: url(images/index_img/collective_2_04.png)center center/cover; position: absolute; top: 0; left: 0;}
+        .ob2{background: url(images/index_img/collective_2_05.png)center center/cover; position: absolute; top: 0; left: 250px;}
+        .ob3{background: url(images/index_img/collective_2_06.png)center center/cover; position: absolute; top: 0; left:500px;}
+        .ob4{background: url(images/index_img/collective_2_07.png)center center/cover; position: absolute; top: 0; left: 750px;}
+        .ob5{background: url(images/index_img/collective_2_08.png)center center/cover; position: absolute; top: 0; left: 1000px;}
+        .ob6{background: url(images/index_img/collective_2_09.png)center center/cover; position: absolute; top: 0; left: 1250px;}
+        .ob7{background: url(images/index_img/collective_2_10.png)center center/cover; position: absolute; top: 0; left: 1500px;}
+        .ob8{background: url(images/index_img/collective_2_11.png)center center/cover; position: absolute; top: 0; left: 170px;}
+    
+    .mememi_shop{
+        width: 100%; height: 800px; border: 1px solid blue;
+        background-color: white;
+        position: relative; top: 500px;
+        text-align: center;
+        box-sizing: border-box;
+        padding-top: 100px;
+        z-index: 3;
+    }
+    #main_shop{
+        width: 100%; height: 500px; border: 1px solid red;
+    }
+    /* #main_shop img{position: fixed;} */
     </style>
 </head>
 <body>
@@ -142,13 +426,13 @@ $(document).ready(function(){
                 <li><a href="#">About</a></li>
                 <li><a href="#">Location</a></li>
                 <li><a href="#">Contact Us</a></li>
-                <div class="smenu_img">
+                <div class="smenu_img smenu_img1">
                 <p class="s_title">About MeMeMi</p>
                 <div id="s_img1"></div>
                 <p class="s_content">콜렉트 카페 미미미를 소개합니다.</p>
                 <p class="s_sub">Read More+</p>
                 </div>
-                <div class="smenu_img">
+                <div class="smenu_img smenu_img2">
                     <p class="s_title">In MILANO</p>
                     <div id="s_img2"></div>
                     <p class="s_sub">VIA BRERA 23</p>
@@ -168,6 +452,11 @@ $(document).ready(function(){
                 <li><a href="#">Bread&cookie</a></li>
                 <li><a href="#">Cake</a></li>
                 <li><a href="#">+ Season menu</a></li>
+                <div class="smenu_img smenu_img3">
+                    <p class="s_title">New Menu</p>
+                    <div id="s_img3"></div>
+                    <p class="s_content">씨푸드 스테이크 플래터</p>
+                </div>
             </ol>
             </li>
             <li><a href="#">Caffe</a>
@@ -185,19 +474,43 @@ $(document).ready(function(){
                 <li><a href="#">Ice cream</a></li>
                 <li><a href="#">Dessert</a></li>
                 <li><a href="#">Food</a></li>
+                <div class="smenu_img smenu_img4">
+                    <p class="s_title">New Menu</p>
+                    <div id="s_img4"></div>
+                    <p class="s_content">프루티 파라다이스</p>
+                </div>
             </ol>
             </li>
             <li><a href="#">Lifestyle</a>
             <ol class="smenu">
                 <li><a href="#">Polspotten</a></li>
                 <li><a href="#">Qeeboo</a></li>
+                <div class="smenu_img smenu_img5">
+                    <p class="s_title">Polspotten</p>
+                    <div id="s_img5"></div>
+                </div>
             </ol>
             </li>
             <li><a href="#">Trend</a>
              <ol class="smenu">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Location</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <div class="smenu_img smenu_img6">
+                    <p class="s_title">Food</p>
+                    <div id="s_img6"></div>
+                    <p class="s_content">왠지 모르게 설레는 날♥</p>
+                    <p class="s_sub">Read More+</p>
+                </div>
+                <div class="smenu_img smenu_img7">
+                    <p class="s_title">Lifestyle</p>
+                    <div id="s_img7"></div>
+                    <p class="s_content">원하는 만큼의 시원함과 따뜻함♥</p>
+                    <p class="s_sub">Read More+</p>
+                 </div>
+                 <div class="smenu_img smenu_img8">
+                    <p class="s_title">Culture</p>
+                    <div id="s_img8"></div>
+                    <p class="s_content">Inspired By Distinctive Tableware</p>
+                    <p class="s_sub">Read More+</p>
+                </div>
             </ol>
             </li>
             <li><a href="#">Collective Shop</a>
@@ -208,8 +521,20 @@ $(document).ready(function(){
                 <li><a href="#">Stool</a></li>
                 <li><a href="#">Object</a></li>
                 <li><a href="#">Lighting</a></li>
-                <li><a href="#">Tumbler</a></li>
-                <li><a href="#">Kitchen</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Meal Kit</a></li>
+                <div class="smenu_img smenu_img9">
+                    <p class="s_title">Table</p>
+                    <div id="s_img9"></div>
+                    <p class="s_content">PINEAPPLE JAR MULTI PINK</p>
+                    <p class="s_sub">View More+</p>
+                </div>
+                <div class="smenu_img smenu_img10">
+                    <p class="s_title">Stool</p>
+                    <div id="s_img10"></div>
+                    <p class="s_content">Zig Zag Pink</p>
+                    <p class="s_sub">View More+</p>
+                </div>
             </ol>
             </li>
         </ul>
@@ -221,11 +546,75 @@ $(document).ready(function(){
             <li></li>
         </ul>
     </nav>
+    <div id="bxslider1">
     <div class="bxslider">
         <div><img src="images/index_img/newImg01.png"></div>
         <div><img src="images/index_img/newImg02.png"></div>
         <div><img src="images/index_img/newImg03.png"></div>
-    </div>
+    </div> 
+</div>
     <div class="bxslider_side"></div>
+
+    <div class="bm_line">
+        <div class="title">Best Menu</div>
+        <div class="sub_title">미미미의 시그니처 푸드! <br> 가장 많은 사랑을 받은 베스트 셀링 메뉴는?</div>
+        
+        <div class="bm bm1">
+            <div id="bm_img1"></div>
+            <p class="bm_title">마이 썸머 로맨스<br>(My Summer Romance)</p>
+            <p class="bm_content">피스타치오의 고소한 풍미에 스모키한<br>에스프레소의 신선한 하모니!<br>달콤한 여름 로맨스를 완성해 줄<br>피스타치오 라떼, 마이 썸머 로맨스.</p>
+        </div>
+        <div class="bm bm2">
+            <div id="bm_img2"></div>
+            <p class="bm_title">스위치 온<br>(Switch On)</p>
+            <p class="bm_content">상큼한 레몬을 넣으면 푸른빛에서<br>핑크색으로 변하는 신비로운<br>스위치 온 칵테일. 오늘 당신의<br>기분에 스위치를 켜보세요!</p>
+        </div>
+        <div class="bm bm3">
+            <div id="bm_img3"></div>
+            <p class="bm_title">봉골레-Sea Pasta<br>(Vongole-Sea Pasta)</p>
+            <p class="bm_content">프레쉬함 가득 담은 미나리와<br>허브의 왕이라 불리는 바질향이<br>특징인 봉골레-씨 파스타.</p>
+        </div>
+        <div class="bm bm4">
+            <div id="bm_img4"></div>
+            <p class="bm_title">시칠리아 빠삐요뜨<br>(Sicilia Papillote)</p>
+            <p class="bm_content">얇은 종이를 사탕처럼 한 겹씩<br>열면 씨푸드 재료 본연의 향과<br>맛을 오롯이 느낄 수 있는<br>시칠리아 빠삐요뜨.</p>
+        </div>
+        <div id="right_side"></div>
+    </div><!--best menu 끝-->
+
+    <div class=cls_line>
+        <div class="title">Collective Lifestyle Shop</div>
+        <div id="line">_____</div>
+        <div class="sub_title">카페를 넘어 문화와 라이프스타일이 공존하는 콜렉트 카페 미미미<br>미미미가 제안하는 감각적인 아이템들을 만나보세요.</div>
+        <div class="cls_box">
+        <div class="cls_img1"><p>Add joy to you own space!</p><p>View Now</p></div>
+        <div class="cls_img2"><p>Playing around with Pols Potten</p><p>View Now</p></div>
+        <div class="cls_img3"><p>Inspired by distinctive tableware</p><p>View Now</p></div>
+        <div class="cls_img4"><p>Brighten up your kitchen</p><p>View Now</p></div>
+        <div class="cls_img5"><p>The unique 'Zig Zag Stool' of Pols Potten</p><p>View Now</p></div>
+        <div class="cls_img6"><p>How do you like to stylize your favorite items?</p><p>View Now</p></div>
+    </div>
+
+    <ul class="object">
+        <li class="ob1"></li>
+        <li class="ob2"></li>
+        <li class="ob3"></li>
+        <li class="ob4"></li>
+        <li class="ob5"></li>
+        <li class="ob6"></li>
+        <li class="ob7"></li>
+        <li class="ob8"></li>
+    </ul>
+    </div><!--Collective Lifestyle Shop 끝-->
+
+    <div class="mememi_shop">
+        <div class="title">Collect CAFFE MeMeMip</div>
+        <div id="line">_____</div>
+        <div class="sub_title">카페 미미미는 이탈리아 밀라노 비아 브레라 23에서 탄생한 글로벌 콜렉트 카페입니다.<br>
+        미미미는 카페라는 틀에서 벗어나 패션과 라이프스타일을 접목한 새로운 공간을 선보이고 있습니다.</div>
+        <div id="main_shop"><img src="images/index_img/cafePlace01.png"></div>
+    </div>
+
+
 </body>
 </html>
