@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafe mememi_yj</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="shortcut icon" href="images/common/favicon.ico.ico">
       <!-- bxSlider CSS file -->
 <link href="css/jquery.bxslider.css" rel="stylesheet" />
@@ -11,6 +12,7 @@
 <script src="js/jquery-3.1.1.min.js"></script>
 <!-- bxSlider Javascript file -->
 <script src="js/jquery.bxslider.js"></script>
+
 <script>
 $(document).ready(function(){
 		$('.bxslider').bxSlider({
@@ -81,7 +83,6 @@ $(document).ready(function(){
             top: 0; left: 0;
             margin-top: 100px;
             background: #fff;
-            opacity: .9;
             transition: all .3s;
         }
         .nav:hover::before{height: 435px;}
@@ -173,21 +174,51 @@ $(document).ready(function(){
             /* border: 1px solid red; */
             background: url("images/common/menuTool03.png")center center/cover;}
 
-        #bxslider1{width: 50% !important; height: 600px !important; border: 1px solid red; 
+        #bxslider1{width: 50% !important; height: 580px !important; 
+            /* border: 1px solid red;  */
             box-sizing: border-box;
             float: left;
-            position: relative; top: 600px;
+            position: relative; top: 590px;
+            background-size: cover;
+            /* border: 1px solid red; */
         }
         .bxslider{width: 100%; height: 500px !important;
+            background-size: cover;
             position: relative;
             z-index: 1;
             float: left;}
+        .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {position: absolute; bottom: 20px;}
+        .bx-wrapper .bx-pager.bx-default-pager a {
+    text-indent: -9999px;
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin: 0 5px;
+    opacity: .4;
+        }
+        .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
+    background: #ffffff; opacity: 1 !important;}
+    .bx-wrapper .bx-prev {left: 17px; background: url(images/common/prev\ \(1\).svg) no-repeat;}
+    .bx-wrapper .bx-next {right: 10px; background: url(images/common/next.svg) no-repeat;}
+.bx-wrapper {
+    -moz-box-shadow: 0;
+    -webkit-box-shadow: 0 ;
+    box-shadow: 0 ;
+    border: 0px solid #fff;
+    background: #fff;
+}
+.main .swiper-container a {
+    width: 100%;
+    height: 100%;
+}
         .bxslider_side{
             width: 50%; height: 600px;
             position: absolute; top: 690px; right: 0;
             /* border: 1px solid blue; */
             background: url("images/index_img/newImg04.png")center center/cover;
         }
+
+
         .bm_line{
             width: 100%; height: 800px; background: rgb(247, 236, 238); 
             position: relative; left: 0; top: 0;
@@ -205,6 +236,7 @@ $(document).ready(function(){
             /* border: 1px solid red; */
             display: inline-block;
         }
+        .bm:nth-child(3){transform: translateY(-18.5px);}
         .bm:nth-child(5){transform: translateY(-18.5px);}
         #bm_img1{width: 250px; height: 250px; margin: 0 auto;
         background: url(images/index_img/bestimg01.png)no-repeat center center;
@@ -223,13 +255,15 @@ $(document).ready(function(){
         }
         #bm_img4{width: 250px; height: 250px; margin: 0 auto;
         background: url(images/index_img/bestimg04.png)no-repeat center center;
-        background-size: 90%; transition: all .8s;
+        background-size: 75%; transition: all .8s;
         margin-bottom: 30px;
+        transform: translateY(15px);
+        /* border: 1px solid red; */
         }
         #bm_img1:hover{background-size: 100%;}
         #bm_img2:hover{background-size: 100%;}
         #bm_img3:hover{background-size: 100%;}
-        #bm_img4:hover{background-size: 100%;}
+        #bm_img4:hover{background-size: 85%;}
 
         .bm_title{font-weight: bold; margin-bottom: 7px;}
         .bm_content{font-size: 13px; color:gray;}
@@ -238,7 +272,7 @@ $(document).ready(function(){
         position: fixed;
         }
         .cls_line{
-            width: 100%; height: 1300px; background-color: #f1f1f1; 
+            width: 100%; height: 1000px; background-color: #f1f1f1; 
             position: relative; top: 500px;
             text-align: center;
             box-sizing: border-box;
@@ -384,36 +418,155 @@ $(document).ready(function(){
         .cls_img6>p:first-child{padding-top: 25%;}
         .cls_img6:hover::before{opacity: .7;}
         .cls_img6:hover p{opacity: 1;}
-        .object{
-            width: 95%; height: 200px; 
-            margin: 0 auto;
-            margin-top: 80px; 
-            position: relative;
-        }
-        .object li{width: 200px; height: 200px;}
-        .ob1{background: url(images/index_img/collective_2_04.png)center center/cover; position: absolute; top: 0; left: 0;}
-        .ob2{background: url(images/index_img/collective_2_05.png)center center/cover; position: absolute; top: 0; left: 250px;}
-        .ob3{background: url(images/index_img/collective_2_06.png)center center/cover; position: absolute; top: 0; left:500px;}
-        .ob4{background: url(images/index_img/collective_2_07.png)center center/cover; position: absolute; top: 0; left: 750px;}
-        .ob5{background: url(images/index_img/collective_2_08.png)center center/cover; position: absolute; top: 0; left: 1000px;}
-        .ob6{background: url(images/index_img/collective_2_09.png)center center/cover; position: absolute; top: 0; left: 1250px;}
-        .ob7{background: url(images/index_img/collective_2_10.png)center center/cover; position: absolute; top: 0; left: 1500px;}
-        .ob8{background: url(images/index_img/collective_2_11.png)center center/cover; position: absolute; top: 0; left: 170px;}
-    
-    .mememi_shop{
-        width: 100%; height: 800px; border: 1px solid blue;
+    .mememi_caffe{
+        width: 100%; height: 800px;
         background-color: white;
         position: relative; top: 500px;
         text-align: center;
         box-sizing: border-box;
         padding-top: 100px;
-        z-index: 3;
     }
-    #main_shop{
-        width: 100%; height: 500px; border: 1px solid red;
+    #main_caffe{
+        width: 100%; height: 500px; 
+        background: url(images/images/31_0.jpg)center fixed;        
+        border: 1px solid red;
     }
-    /* #main_shop img{position: fixed;} */
-    </style>
+    .title2{color: rgb(86, 86, 86); transform: translateY(-40px);}
+    .mememi_caffe .sub_title{font-weight: 400 !important;}
+    #main_shop img{position: fixed;}
+    .mememi_shop{
+        width: 100%; height: 600px; 
+        /* border: 1px solid orange; */
+        background-color: white;
+        position: relative; top: 420px;
+        box-sizing: border-box;
+        padding-top: 70px;
+    }
+    .shopbox{
+        width: 500px; height: 400px;
+        margin-right:20px; text-align: center;
+    }
+    .sb_line{
+        width: 1050px; height: 400px; 
+        margin: 0 auto; position: relative;
+        margin-top: 80px;
+        /* border: 1px solid rebeccapurple; */
+    }
+    .shopbox:nth-child(1){position: absolute; top: 0; left: 0;}
+    .shopbox:nth-child(2){position: absolute; top: 0; right: 0;}
+    #shop1{
+        width: 500px; height: 300px; 
+        background: url(images/index_img/미미미가든1.jpeg)no-repeat center center/cover;
+        margin-bottom: 15px;
+    }
+    #shop2{
+        width: 500px; height: 300px; 
+        background: url(images/index_img/미미미가든2.jpeg)no-repeat center center/cover;
+        margin-bottom: 15px;
+    }
+    .mememi_trend{
+        width: 100%; height: 1500px; background: rgb(255, 230, 234);
+        position: relative; top: 420px;
+        text-align: center;
+        box-sizing: border-box;
+        padding-top: 100px;
+    }
+    #trend_line{
+        width: 1055px; height: 1055px; 
+        margin: 0 auto;
+        position: relative;
+    }
+    .trendbox{
+        width: 245px; height: 245px;
+    }
+    .trend1{background: url(images/index_img/trend01.png)no-repeat center center/cover;
+    position: absolute; top: 0; left: 0;
+    }
+    .trend2{background: url(images/index_img/trend02.png)no-repeat center center/cover;
+    position: absolute; top: 0; left: 270px;
+    }
+    .trend3{background: url(images/index_img/trend03.png)no-repeat center center/cover;
+    position: absolute; top: 270px; left: 0;
+    }
+    .trend4{background: url(images/index_img/trend04.png)no-repeat center center/cover;
+    position: absolute; top: 270px; left: 270px;
+    }
+    .trend5{background: url(images/index_img/trend05.png)no-repeat center center/cover;
+    width: 515px !important; height: 515px !important;
+        position: absolute; top: 0; right: 0;
+    }
+    .trend6{background: url(images/index_img/trend06.png)no-repeat center center/cover;
+    width: 515px !important; height: 515px !important;
+        position: absolute; left: 0; bottom: 0;
+    }
+    .trend7{background: url(images/index_img/trend07.png)no-repeat center center/cover;
+    position: absolute; right: 270px; bottom: 270px;
+    }
+    .trend8{background: url(images/index_img/trend08.png)no-repeat center center/cover;
+    position: absolute; right: 0; bottom: 270px;
+    }
+    .trend9{background: url(images/index_img/trend09.png)no-repeat center center/cover;
+    position: absolute; right: 270px; bottom: 0;
+    }
+    .trend10{background: url(images/index_img/trend10.png)no-repeat center center/cover;
+    position: absolute; right: 0; bottom: 0;
+    }
+    .tag_text{
+        width: 100%; height: 200px; background-color: white;
+        /* border: 1px solid red; */
+        position: relative; top: 420px;
+        text-align: center;
+        box-sizing: border-box;
+        padding-top: 50px;
+    }
+    .tag_text p{font-size: 20px; line-height: 40px;}
+    .tag_text p:last-child{font-size: 13px;}
+    footer{
+        width: 100%; height: 450px; 
+        background: url(images/common/hd_visual.png)no-repeat center center/cover;
+        position: relative; top: 420px;
+        color: #fff;
+    }
+    footer::before{
+        content: "";
+        display: block;
+        width: 100%; height: 450px;
+        background-color: #111;
+        opacity: .8;
+    }
+    .f_line{
+        width: 850px; height: 300px;
+        margin: 0 auto;
+        transform: translateY(-400px);
+        position: relative;
+    }
+    #f_logo{width: 150px; height: 100px; 
+        position: absolute; left: 0; top: 0;
+    background: url(images/common/neon_logo2.png)no-repeat center center;}
+
+    .f_line p{font-size: 12px; position: absolute; left: 0; top: 120px; line-height: 25px;}
+   button{background-color: #bbb; color: #fff; padding: 0.5px 4px; font-size: 12px; border: 0px;}
+    .f_icon{
+        width: 200px; height: 50px; 
+        position: absolute; left: 0; bottom: 0;
+    }
+    .icon{width: 50px; height: 50px; float: left; margin-right: 15px;}
+  .fb{background: url(images/common/face.png)no-repeat center center; cursor: pointer;}
+  .ig{background: url(images/common/insta.png)no-repeat center center; cursor: pointer;}
+  .v{background: url(images/common/vlog.png)no-repeat center center; cursor: pointer;}
+  
+  footer ul{width: 100px; height: 200px; float: left;
+    position: absolute; top: 10px; right: 0;
+    font-size: 13px;
+   }
+footer ul:first-of-type{transform: translateX(-150px);}
+footer ul li{line-height: 50px; font-size: 11px; transform: translate(10px,10px);}
+ 
+ @media only screen and (max-width:700px){
+    f_line{width: 90%; box-sizing: border-box; padding: 10px; display: flex;}
+    footer ul{clear: both;}
+ }
+ </style>
 </head>
 <body>
     <header>
@@ -548,36 +701,36 @@ $(document).ready(function(){
     </nav>
     <div id="bxslider1">
     <div class="bxslider">
-        <div><img src="images/index_img/newImg01.png"></div>
-        <div><img src="images/index_img/newImg02.png"></div>
-        <div><img src="images/index_img/newImg03.png"></div>
+        <div><img src="images/index_img//bxslider1.jpg"></div>
+        <div><img src="images/index_img/bxslider2.jpg"></div>
+        <div><img src="images/index_img/bxslider3.jpg"></div>
     </div> 
 </div>
     <div class="bxslider_side"></div>
 
     <div class="bm_line">
-        <div class="title">Best Menu</div>
-        <div class="sub_title">미미미의 시그니처 푸드! <br> 가장 많은 사랑을 받은 베스트 셀링 메뉴는?</div>
+        <div class="title">MeMeMi Now</div>
+        <div class="sub_title">Eat & Life<br>패뷸러스 아트테인먼트 미미미의 소식을 확인하세요</div>
         
         <div class="bm bm1">
             <div id="bm_img1"></div>
-            <p class="bm_title">마이 썸머 로맨스<br>(My Summer Romance)</p>
-            <p class="bm_content">피스타치오의 고소한 풍미에 스모키한<br>에스프레소의 신선한 하모니!<br>달콤한 여름 로맨스를 완성해 줄<br>피스타치오 라떼, 마이 썸머 로맨스.</p>
+            <p class="bm_title">Wonder Watermelon<br>원더 워터멜론(I)</p>
+            <p class="bm_content">달콤한 수박에 상큼한 라임이 더해져<br>무더운 여름을 잊게 하는<br>청량함을 선사합니다!</p>
         </div>
         <div class="bm bm2">
             <div id="bm_img2"></div>
-            <p class="bm_title">스위치 온<br>(Switch On)</p>
-            <p class="bm_content">상큼한 레몬을 넣으면 푸른빛에서<br>핑크색으로 변하는 신비로운<br>스위치 온 칵테일. 오늘 당신의<br>기분에 스위치를 켜보세요!</p>
+            <p class="bm_title">Waterful<br>워터풀(I)</p>
+            <p class="bm_content">시원한 수박과 상큼한 라임향이<br>어우러진 에이드.<br>밀라노 본점 미미미의 베스트 여름 메뉴인<br>워터풀을 한국에서도 즐겨보세요!</p>
         </div>
         <div class="bm bm3">
             <div id="bm_img3"></div>
-            <p class="bm_title">봉골레-Sea Pasta<br>(Vongole-Sea Pasta)</p>
-            <p class="bm_content">프레쉬함 가득 담은 미나리와<br>허브의 왕이라 불리는 바질향이<br>특징인 봉골레-씨 파스타.</p>
+            <p class="bm_title">Mango Pool Granita<br>망고 풀 그라니따</p>
+            <p class="bm_content">리얼 망고의 달콤함과 진한 풍미를<br>그대로 즐기고 싶은<br>당신을 위해 준비했어요.</p>
         </div>
         <div class="bm bm4">
             <div id="bm_img4"></div>
-            <p class="bm_title">시칠리아 빠삐요뜨<br>(Sicilia Papillote)</p>
-            <p class="bm_content">얇은 종이를 사탕처럼 한 겹씩<br>열면 씨푸드 재료 본연의 향과<br>맛을 오롯이 느낄 수 있는<br>시칠리아 빠삐요뜨.</p>
+            <p class="bm_title">Snow Mango Shake<br>스노우 망고 쉐이크</p>
+            <p class="bm_content">소프트한 밀크 아이스크림과<br>핸드메이드 망고 베이스.<br>달콤한 망고로 완성하는<br>행복한 순간을 느껴보세요.</p>
         </div>
         <div id="right_side"></div>
     </div><!--best menu 끝-->
@@ -594,27 +747,99 @@ $(document).ready(function(){
         <div class="cls_img5"><p>The unique 'Zig Zag Stool' of Pols Potten</p><p>View Now</p></div>
         <div class="cls_img6"><p>How do you like to stylize your favorite items?</p><p>View Now</p></div>
     </div>
-
-    <ul class="object">
-        <li class="ob1"></li>
-        <li class="ob2"></li>
-        <li class="ob3"></li>
-        <li class="ob4"></li>
-        <li class="ob5"></li>
-        <li class="ob6"></li>
-        <li class="ob7"></li>
-        <li class="ob8"></li>
-    </ul>
     </div><!--Collective Lifestyle Shop 끝-->
 
-    <div class="mememi_shop">
-        <div class="title">Collect CAFFE MeMeMip</div>
+    <div class="mememi_caffe">
+        <div class="title">Eat & Life MeMeMi</div>
+        <div class="title2">FROM MILANO</div>
         <div id="line">_____</div>
-        <div class="sub_title">카페 미미미는 이탈리아 밀라노 비아 브레라 23에서 탄생한 글로벌 콜렉트 카페입니다.<br>
-        미미미는 카페라는 틀에서 벗어나 패션과 라이프스타일을 접목한 새로운 공간을 선보이고 있습니다.</div>
-        <div id="main_shop"><img src="images/index_img/cafePlace01.png"></div>
+        <div class="sub_title">미미미는 이탈리아 밀라노 비아 브레라 23에서 탄생한 글로벌 아트테인먼트입니다.<br>
+        가든,키친,카페 3가지 타입으로 패션과 라이프 스타일을 접목한 새로운 공간을 선보이고 있습니다.</div>
+        <div id="main_caffe"></div>
     </div>
+    <div class="mememi_shop">
+        <div class="sb_line">
+        <div class="shopbox">
+            <div id="shop1"></div>
+            <div class="shop_title">미미미 가든 카페 청담</div>
+            <div class="bm_content">서울특별시 강남구 도산대로 417 1F</div>
+        </div>
+        <div class="shopbox">
+            <div id="shop2"></div>
+            <div class="shop_title">미미미 가든 BAR&RESTAURANT</div>
+            <div class="bm_content">서울특별시 강남구 도산대로 417 B1-B2F</div>
+        </div>
+    </div>
+    </div>
+    <div class="mememi_trend">
+        <div class="title">MeMeMi Garden TREND</div>
+        <div id="line">_____</div>
+        <div class="sub_title">미미미 가든의 스페셜한 스토리<br>지금 확인해보세요</div>
+    <div id="trend_line">
+        <div class="trendbox trend1"></div>
+        <div class="trendbox trend2"></div>
+        <div class="trendbox trend3"></div>
+        <div class="trendbox trend4"></div>
+        <div class="trendbox trend5"></div>
+        <div class="trendbox trend6"></div>
+        <div class="trendbox trend7"></div>
+        <div class="trendbox trend8"></div>
+        <div class="trendbox trend9"></div>
+        <div class="trendbox trend10"></div>
+    </div>
+    </div>
+    <div class="tag_text">
+        <p>Stay connected!</p>
+        <p>Follow us on instagram</p>
+        <p>@mememi.official</p>
+    </div>
+    
+    <footer>
+        <div class="f_line">
+        <div id="f_logo"></div>
+        <p>(주)미미미 | 대표이사 : 양지해<br>
+            06014 서울특별시 강남구 도산대로 417 (청담동) | Tel : 02-518-8765<br>
+            Email : hcpark@metrocity.co.kr | 사업자등록번호 : 5198700640 <button>사업자정보확인</button><br>
+            통신판매업신고 : 2017-서울강남-03277 | 개인정보관리책임자 : 박한철</p>
+
+        <div class="f_icon">
+            <div class="icon fb"></div>
+            <div class="icon ig"></div>
+            <div class="icon v"></div>
+        </div>
+
+        <ul>Help
+            <li><a href="#">개인정보취급방침</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+        <ul>Mememi
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">매장소개</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+    </footer>
 
 
+    <script>
+        var hd=$('nav');   
+        $(window).scroll(function(){
+        var h=$(window).scrollTop();      
+        
+        if(h > 680){
+        hd.css({position:'fixed',top:'0'});
+        hd.stop().animate({opacity:'0'}, 0);
+        hd.stop().animate({opacity:'1'}, 200);
+        
+        }else{
+        hd.css({display:'block'});
+        hd.css({position:'relative',top:'0'});
+        hd.stop().animate({opacity:'1'}, 0);
+        } 
+        });
+        $(window).trigger('scroll');
+            
+        </script>
 </body>
 </html>
