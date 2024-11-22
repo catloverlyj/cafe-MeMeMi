@@ -46,7 +46,7 @@ $(document).ready(function(){
         nav{width: 100%; 
             height: 100px;
             background-color: white;
-            position: relative;
+            /* position: relative; */
             top: 600px;
             font-weight: bold;
             /* border: 1px solid red; */
@@ -59,6 +59,7 @@ $(document).ready(function(){
             margin: 0 auto;
             text-align: center;
             z-index: 10;
+            /* overflow: hidden; */
             /* border: 1px solid blue; */
             }
         .nav>li{width: 17%;}
@@ -88,13 +89,13 @@ $(document).ready(function(){
         .nav:hover::before{height: 435px;}
         .smenu{
             width: 700px;
-            height: 400px;
+            height: 0;
             font-size: 12px;
             text-align: left;
             position: relative;
             margin-top: 20px;
             line-height: 50px;
-            /* overflow:hidden; */
+            overflow: hidden;
             /* border: 1px solid orange; */
         }
         /* .smenu:nth-of-type(3){border: 1px solid red; transform: translateX(-100px);} */
@@ -106,11 +107,12 @@ $(document).ready(function(){
             transitiotn: all .3s;}
 
         .smenu>li>a{display: block; opacity: 1;}
+        .nav>li:hover>.smenu{height: 400px;}
         .nav>li:hover>.smenu li{opacity: 1;}
         
         .smenu>div{
             opacity: 0;  
-            transitiotn: all .3s;
+            transitiotn: all .5s;
         }
         .nav>li:hover .smenu>div {opacity: 1;}
 
@@ -186,7 +188,16 @@ $(document).ready(function(){
             background-size: cover;
             position: relative;
             z-index: 1;
-            float: left;}
+            float: left;
+            display: flex;
+        }
+        #bxslider1>p {font-size: 40px; font-weight: bold; color: #fff;
+                position: absolute; top: 20px; right: 20px;
+                /* transform: translateY(-330px);  */
+                text-align: right;}
+
+        .bxslider_side p{font-size: 40px; font-weight: bold; color:#fff; 
+    }
         .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {position: absolute; bottom: 20px;}
         .bx-wrapper .bx-pager.bx-default-pager a {
     text-indent: -9999px;
@@ -216,6 +227,8 @@ $(document).ready(function(){
             position: absolute; top: 690px; right: 0;
             /* border: 1px solid blue; */
             background: url("images/index_img/newImg04.png")center center/cover;
+            box-sizing: border-box;
+            padding: 20px;
         }
 
 
@@ -428,8 +441,8 @@ $(document).ready(function(){
     }
     #main_caffe{
         width: 100%; height: 500px; 
-        background: url(images/images/31_0.jpg)center fixed;        
-        border: 1px solid red;
+        background:url(images/index_img/31_0.jpg)center center fixed;     
+        /* position: absolute;  */
     }
     .title2{color: rgb(86, 86, 86); transform: translateY(-40px);}
     .mememi_caffe .sub_title{font-weight: 400 !important;}
@@ -603,8 +616,6 @@ footer ul li{line-height: 50px; font-size: 11px; transform: translate(10px,10px)
                 <li><a href="#">Pizza</a></li>
                 <li><a href="#">Side</a></li>
                 <li><a href="#">Bread&cookie</a></li>
-                <li><a href="#">Cake</a></li>
-                <li><a href="#">+ Season menu</a></li>
                 <div class="smenu_img smenu_img3">
                     <p class="s_title">New Menu</p>
                     <div id="s_img3"></div>
@@ -622,11 +633,6 @@ footer ul li{line-height: 50px; font-size: 11px; transform: translate(10px,10px)
                 <li><a href="#">Others</a></li>
                 <li><a href="#">Ade</a></li>
                 <li><a href="#">Fresh juice</a></li>
-                <li><a href="#">Smoothie</a></li>
-                <li><a href="#">Granita</a></li>
-                <li><a href="#">Ice cream</a></li>
-                <li><a href="#">Dessert</a></li>
-                <li><a href="#">Food</a></li>
                 <div class="smenu_img smenu_img4">
                     <p class="s_title">New Menu</p>
                     <div id="s_img4"></div>
@@ -701,12 +707,13 @@ footer ul li{line-height: 50px; font-size: 11px; transform: translate(10px,10px)
     </nav>
     <div id="bxslider1">
     <div class="bxslider">
-        <div><img src="images/index_img//bxslider1.jpg"></div>
-        <div><img src="images/index_img/bxslider2.jpg"></div>
-        <div><img src="images/index_img/bxslider3.jpg"></div>
+        <div><img src="images/index_img//bxslider1.jpg" height="100%"></div>
+        <div><img src="images/index_img/bxslider2.jpg" height="100%"></div>
+        <div><img src="images/index_img/bxslider3.jpg" height="100%"></div>
     </div> 
+    <p>Coolness In Summer OASIS</p>
 </div>
-    <div class="bxslider_side"></div>
+    <div class="bxslider_side"><p>SUMMER OASIS</p></div>
 
     <div class="bm_line">
         <div class="title">MeMeMi Now</div>
@@ -827,14 +834,14 @@ footer ul li{line-height: 50px; font-size: 11px; transform: translate(10px,10px)
         $(window).scroll(function(){
         var h=$(window).scrollTop();      
         
-        if(h > 680){
+        if(h > 590){
         hd.css({position:'fixed',top:'0'});
-        hd.stop().animate({opacity:'0'}, 0);
+        hd.stop().animate({opacity:'1'}, 0);
         hd.stop().animate({opacity:'1'}, 200);
-        
+
         }else{
         hd.css({display:'block'});
-        hd.css({position:'relative',top:'0'});
+        hd.css({position:'relative',});
         hd.stop().animate({opacity:'1'}, 0);
         } 
         });
